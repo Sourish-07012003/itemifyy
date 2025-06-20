@@ -13,10 +13,24 @@ export default function AddItem() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const data = { ...formData, additionalImages: formData.additionalImages.split(",") };
-    await axios.post("http://localhost:5000/api/items", data);
-    setSuccess(true);
-    setFormData({ name: "", type: "", description: "", coverImage: "", additionalImages: "" });
+    const data = {
+      ...formData,
+      additionalImages: formData.additionalImages
+        .split(",")
+        .map((img) => img.trim())
+    };
+
+    try {
+      await axios.post("https://itemify-backend.onrender.com/api/items", data);
+      setSuccess(true);
+      setFormData({
+        name: "", type: "", description: "",
+        coverImage: "", additionalImages: ""
+      });
+    } catch (error) {
+      console.error("Error adding item:", error);
+      alert("Failed to add item.");
+    }
   };
 
   return (

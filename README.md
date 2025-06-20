@@ -3,6 +3,7 @@
 Itemifyy is a full-stack item showcase app where users can **add** items with images and **view** them dynamically. Each item opens in a modal with full details and an **enquiry** button that sends an email.
 
 🔗 **Live Site**: [(https://itemiffy.vercel.app) ](https://itemiffy.vercel.app/)
+🔗 **Backend API**: [https://itemify-backend.onrender.com](https://itemify-backend.onrender.com)
 
 ---
 
